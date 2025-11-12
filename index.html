@@ -1,0 +1,374 @@
+!DOCTYPE html
+html lang=ar dir=rtl
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleبوابة المدرسة - لوحة التحكمtitle
+    link rel=stylesheet href=httpscdnjs.cloudflare.comajaxlibsfont-awesome6.4.0cssall.min.css
+    style
+         {
+            margin 0;
+            padding 0;
+            box-sizing border-box;
+            font-family 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        root {
+            --primary #4361ee;
+            --secondary #3a0ca3;
+            --accent #4cc9f0;
+            --light #f8f9fa;
+            --dark #212529;
+            --success #4ade80;
+            --warning #f59e0b;
+            --danger #ef4444;
+            --card-bg rgba(255, 255, 255, 0.9);
+            --shadow 0 10px 30px rgba(0, 0, 0, 0.1);
+            --gradient linear-gradient(135deg, #4361ee, #3a0ca3);
+        }
+
+        body {
+            background linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height 100vh;
+            padding 20px;
+            color var(--dark);
+            display flex;
+            flex-direction column;
+            align-items center;
+        }
+
+        .container {
+            width 100%;
+            max-width 1200px;
+            margin 0 auto;
+        }
+
+         شريط الرأس 
+        .header {
+            background var(--card-bg);
+            backdrop-filter blur(10px);
+            border-radius 20px;
+            padding 25px;
+            margin-bottom 30px;
+            box-shadow var(--shadow);
+            display flex;
+            justify-content space-between;
+            align-items center;
+            flex-wrap wrap;
+            gap 20px;
+        }
+
+        .logo-section {
+            display flex;
+            align-items center;
+            gap 15px;
+        }
+
+        .logo {
+            width 80px;
+            height 80px;
+            border-radius 15px;
+            object-fit cover;
+            box-shadow 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .school-name {
+            font-size 24px;
+            font-weight 800;
+            color var(--secondary);
+            text-shadow 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .time-section {
+            text-align center;
+            background var(--gradient);
+            padding 15px 25px;
+            border-radius 15px;
+            color white;
+            box-shadow 0 5px 15px rgba(58, 12, 163, 0.3);
+        }
+
+        .time {
+            font-size 42px;
+            font-weight 700;
+            letter-spacing 2px;
+            margin-bottom 5px;
+        }
+
+        .date {
+            font-size 18px;
+            font-weight 600;
+        }
+
+         شبكة الأزرار 
+        .dashboard {
+            display grid;
+            grid-template-columns repeat(auto-fit, minmax(300px, 1fr));
+            gap 25px;
+            margin-bottom 30px;
+        }
+
+        .card {
+            background var(--card-bg);
+            backdrop-filter blur(10px);
+            border-radius 20px;
+            padding 30px;
+            box-shadow var(--shadow);
+            transition all 0.3s ease;
+            display flex;
+            flex-direction column;
+            align-items center;
+            text-align center;
+            position relative;
+            overflow hidden;
+            cursor pointer;
+        }
+
+        .cardbefore {
+            content '';
+            position absolute;
+            top 0;
+            left 0;
+            width 100%;
+            height 5px;
+            background var(--gradient);
+        }
+
+        .cardhover {
+            transform translateY(-10px);
+            box-shadow 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            width 80px;
+            height 80px;
+            border-radius 50%;
+            display flex;
+            align-items center;
+            justify-content center;
+            margin-bottom 20px;
+            font-size 32px;
+            color white;
+            box-shadow 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-1 .card-icon {
+            background linear-gradient(135deg, #4ade80, #16a34a);
+        }
+
+        .card-2 .card-icon {
+            background linear-gradient(135deg, #f59e0b, #d97706);
+        }
+
+        .card-3 .card-icon {
+            background linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .card-title {
+            font-size 22px;
+            font-weight 700;
+            margin-bottom 15px;
+            color var(--secondary);
+        }
+
+        .card-description {
+            color #6b7280;
+            margin-bottom 20px;
+            line-height 1.6;
+        }
+
+        .card-btn {
+            background var(--gradient);
+            color white;
+            border none;
+            padding 12px 30px;
+            border-radius 50px;
+            font-size 16px;
+            font-weight 600;
+            cursor pointer;
+            transition all 0.3s ease;
+            display flex;
+            align-items center;
+            gap 8px;
+            box-shadow 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+
+        .card-btnhover {
+            transform translateY(-3px);
+            box-shadow 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+
+         التذييل 
+        .footer {
+            text-align center;
+            padding 20px;
+            color white;
+            font-size 14px;
+            margin-top auto;
+        }
+
+         تأثيرات متقدمة 
+        .floating {
+            animation floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform translateY(0px); }
+            50% { transform translateY(-10px); }
+            100% { transform translateY(0px); }
+        }
+
+        .pulse {
+            animation pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow 0 0 0 0 rgba(67, 97, 238, 0.4); }
+            70% { box-shadow 0 0 0 10px rgba(67, 97, 238, 0); }
+            100% { box-shadow 0 0 0 0 rgba(67, 97, 238, 0); }
+        }
+
+         تصميم متجاوب 
+        @media (max-width 768px) {
+            .header {
+                flex-direction column;
+                text-align center;
+            }
+            
+            .time {
+                font-size 32px;
+            }
+            
+            .date {
+                font-size 16px;
+            }
+            
+            .dashboard {
+                grid-template-columns 1fr;
+            }
+            
+            .school-name {
+                font-size 20px;
+            }
+        }
+
+        @media (max-width 480px) {
+            .card {
+                padding 20px;
+            }
+            
+            .card-icon {
+                width 60px;
+                height 60px;
+                font-size 24px;
+            }
+            
+            .card-title {
+                font-size 18px;
+            }
+        }
+    style
+head
+body
+    div class=container
+        !-- شريط الرأس --
+        div class=header
+            div class=logo-section
+                img src=httpslh3.googleusercontent.comd14dtDNdhOhVOFBEGHoRRBT2wMhx1HNwk0 alt=شعار المدرسة class=logo
+                div
+                    h1 class=school-nameبوابة المدرسة الإلكترونيةh1
+                    p style=color #6b7280; margin-top 5px;نظام إدارة المدرسة المتكاملp
+                div
+            div
+            
+            div class=time-section floating
+                div class=time id=currentTime000000div
+                div class=date id=currentDateالاثنين، ١ يناير ٢٠٢٣div
+            div
+        div
+        
+        !-- شبكة الأزرار --
+        div class=dashboard
+            div class=card card-1
+                div class=card-icon
+                    i class=fas fa-user-graduatei
+                div
+                h2 class=card-titleنظام متابعة الطالباتh2
+                p class=card-descriptionنظام متكامل لمتابعة حضور وغياب الطالبات وتقييم أدائهن الأكاديمي والسلوكي خلال الفصل الدراسي.p
+                a href=httpsemamah-school.github.ioabsenceindex.html class=card-btn
+                    i class=fas fa-external-link-alti الدخول للنظام
+                a
+            div
+            
+            div class=card card-2
+                div class=card-icon
+                    i class=fas fa-toolsi
+                div
+                h2 class=card-titleاستمارة إبلاغ عن حالةh2
+                p class=card-descriptionنظام للإبلاغ عن حالات الصيانة والنظافة في المدرسة لتقديم خدمة أفضل للطالبات والكوادر التعليمية.p
+                a href=httpsscript.google.commacrossAKfycbz206ikRI4zbicNEMoPbckgoPwQ33u9agDvZxSjq0psWO8rGw0FAGvUEl5WdOPTAmFGQwexecpage=form class=card-btn
+                    i class=fas fa-external-link-alti الدخول للنظام
+                a
+            div
+            
+            div class=card card-3
+                div class=card-icon
+                    i class=fas fa-chalkboard-teacheri
+                div
+                h2 class=card-titleمنصة نورh2
+                p class=card-descriptionالمنصة التعليمية المتكاملة التي توفر مصادر تعليمية متنوعة وبيئة تفاعلية للطالبات والمعلمات.p
+                a href=httpsemamah-school.github.ioNOORindex.html class=card-btn
+                    i class=fas fa-external-link-alti الدخول للنظام
+                a
+            div
+        div
+        
+        !-- التذييل --
+        div class=footer
+            p© 2023 بوابة المدرسة الإلكترونية  جميع الحقوق محفوظةp
+        div
+    div
+
+    script
+         تحديث الوقت والتاريخ
+        function updateDateTime() {
+            const now = new Date();
+            
+             الوقت
+            const timeOptions = { 
+                hour12 true, 
+                hour '2-digit', 
+                minute '2-digit', 
+                second '2-digit' 
+            };
+            const timeString = now.toLocaleTimeString('ar-SA', timeOptions);
+            document.getElementById('currentTime').textContent = timeString;
+            
+             التاريخ
+            const dateOptions = { 
+                weekday 'long', 
+                year 'numeric', 
+                month 'long', 
+                day 'numeric' 
+            };
+            const dateString = now.toLocaleDateString('ar-SA', dateOptions);
+            document.getElementById('currentDate').textContent = dateString;
+        }
+        
+         تحديث الوقت كل ثانية
+        setInterval(updateDateTime, 1000);
+        updateDateTime();  التشغيل الأولي
+        
+         إضافة تأثيرات تفاعلية
+        document.querySelectorAll('.card').forEach(card = {
+            card.addEventListener('mouseenter', function() {
+                this.classList.add('pulse');
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.classList.remove('pulse');
+            });
+        });
+    script
+body
+html
