@@ -404,7 +404,7 @@
             
             <div class="time-section floating">
                 <div class="time" id="currentTime">00:00:00</div>
-                <div class="date" id="currentDate">الاثنين، ١ يناير ٢٠٢٣</div>
+                <div class="date" id="currentDate">الإثنين، 1 يناير 2023</div>
             </div>
         </div>
         
@@ -465,12 +465,13 @@
             const timeString = now.toLocaleTimeString('ar-SA', timeOptions);
             document.getElementById('currentTime').textContent = timeString;
             
-            // التاريخ
+            // التاريخ الميلادي بالعربية
             const dateOptions = { 
                 weekday: 'long', 
                 year: 'numeric', 
                 month: 'long', 
-                day: 'numeric' 
+                day: 'numeric',
+                calendar: 'gregory' // استخدام التقويم الميلادي
             };
             const dateString = now.toLocaleDateString('ar-SA', dateOptions);
             document.getElementById('currentDate').textContent = dateString;
